@@ -6,6 +6,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import Main from "./screens/Main"
 import Second from './screens/Second';
 
+
 const fetchFonts = () => {
   return Font.loadAsync({
     'bank-gothic-light': require('./assets/fonts/bank-gothic-light-bt.ttf')
