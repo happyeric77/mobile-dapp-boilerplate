@@ -4,7 +4,9 @@ import Navigation from '../types';
 import { useWalletConnect } from '@walletconnect/react-native-dapp';
 
 export default function Main({navigation}: any) {
+
   const connector = useWalletConnect()
+
   return (
       <View style={styles.container}>
         <Text style={styles.textContent}>This is the Main </Text>
