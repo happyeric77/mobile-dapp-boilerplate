@@ -5,4 +5,6 @@ import './global';
 import { registerRootComponent , scheme} from 'expo';
 import { AppProviders } from './AppProviders';
 
+
+
 registerRootComponent(AppProviders);
