@@ -40,8 +40,8 @@ export const AppProviders = ({ children }: any) => {
     return (        
         <WalletConnectProvider {...walletConnectOptions}>
             {/* <MoralisProvider
-            appId="YNGTdQEGlHEuG5xLEVP2NK5TSezl9x3Fi3eyQEOv"
-            serverUrl="https://li8crrzx4alq.grandmoralis.com:2053/server"
+            appId=""
+            serverUrl=""
             environment="native"> */}
             <App/>
             {/* </MoralisProvider> */}
