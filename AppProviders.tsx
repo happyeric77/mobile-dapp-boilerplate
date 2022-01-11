@@ -12,9 +12,6 @@ import { MoralisProvider } from "react-moralis"
 
 import Moralis from "moralis/react-native.js";
 Moralis.setAsyncStorage(AsyncStorage)
-// Moralis.start({appId: "YNGTdQEGlHEuG5xLEVP2NK5TSezl9x3Fi3eyQEOv", serverUrl: "https://li8crrzx4alq.grandmoralis.com:2053/server"})
-
-
 
 const walletConnectOptions: WalletConnectProviderProps = {
     redirectUrl: Platform.OS === "web" ? window.location.origin : `${scheme}://`,
@@ -39,12 +36,12 @@ const walletConnectOptions: WalletConnectProviderProps = {
 export const AppProviders = ({ children }: any) => {
     return (        
         <WalletConnectProvider {...walletConnectOptions}>
-            {/* <MoralisProvider
-            appId=""
-            serverUrl=""
-            environment="native"> */}
+            <MoralisProvider
+            appId={process.env.REACT_APP_MORALIS_APPLICATION_ID!}
+            serverUrl={process.env.REACT_APP_MORALIS_SERVER_URL!}
+            environment="native">
             <App/>
-            {/* </MoralisProvider> */}
+            </MoralisProvider>
         </WalletConnectProvider>
         
     );

@@ -3,14 +3,15 @@ import { Button, StyleSheet, Text, View } from 'react-native';
 import Navigation from '../types';
 import { useWalletConnect } from '@walletconnect/react-native-dapp';
 import { getWeb3 } from '../getWeb3';
+import { useMoralis} from "react-moralis";
 
 export default function Main({navigation}: any) {
-
+  const {isAuthenticated, user} = useMoralis()
   const connector = useWalletConnect()
 
   return (
       <View style={styles.container}>
-        <Text style={styles.textContent}>This is the Main </Text>
+        <Text style={styles.textContent}>This is the Main {JSON.stringify(isAuthenticated)} {JSON.stringify(user)} </Text>
         <Button onPress={() => {(navigation as Navigation).navigate('Second Page')}} title="Go to Second Page"/>
         <Button onPress={()=> {
           connector.connect()
