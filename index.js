@@ -3,8 +3,8 @@
 
 import './global';
 import { registerRootComponent , scheme} from 'expo';
-import { AppProviders } from './AppProviders';
+const { default: App } = require("./AppWithProviders");
 
 
 
-registerRootComponent(AppProviders);
+registerRootComponent(App);

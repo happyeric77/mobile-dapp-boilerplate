@@ -4,12 +4,12 @@ import { AbstractProvider } from "web3-core";
 import { JsonRpcPayload, JsonRpcResponse } from "web3-core-helpers";
 
 // eslint-disable-next-line functional/prefer-readonly-type
-export async function enableMoralisViaWalletConnect({ connector }: { connector: WalletConnect }) {
+export async function enableViaWalletConnect({ connector }: { connector: WalletConnect }) {
   // @ts-ignore
   const { connector: newConnector } = await connector.connect();
 
   const makeJsonRpcResponse = (payload: JsonRpcPayload, result: any, error?: Error): JsonRpcResponse => ({
-    id: +payload.id!,
+    id: +payload.id,
     jsonrpc: payload.jsonrpc,
     result,
     error: error ? error.message : undefined,

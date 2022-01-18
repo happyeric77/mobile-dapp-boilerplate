@@ -14,7 +14,7 @@ export default function Main({navigation}: any) {
       <View style={styles.container}>
         <Text style={styles.textContent}>This is the Main  {JSON.stringify(user)} </Text>
         <Button onPress={() => {(navigation as Navigation).navigate('Second Page')}} title="Go to Second Page"/>
-        <Button onPress={async ()=> {
+        <Button onPress={()=> {
           //@ts-ignore
           authenticate({ connector })
             .then(() => {
